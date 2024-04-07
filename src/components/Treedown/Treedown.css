@@ -1,0 +1,113 @@
+  /* General style  */
+.ioutil-treedown { 
+
+}
+/* All Nodes  */
+.ioutil-treedown-node {
+ 
+
+} 
+/* Root Node */ 
+.ioutil-treedown.ioutil-treedown-node {
+    
+  }
+/* Root  Node Button */ 
+.ioutil-treedown.ioutil-treedown-node >button{
+ 
+  }
+  /* Sub Node  */
+ .ioutil-treedown-node:not(.ioutil-treedown) {
+  
+
+  }
+ /* Sub Node Button */
+ .ioutil-treedown-node:not(.ioutil-treedown)> button {
+   
+
+    /* same as .dropdown-item   */
+        display: block;
+        width: 100%;
+        padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+        clear: both;
+        font-weight: 400;
+        color: var(--bs-dropdown-link-color);
+        text-align: inherit;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        border-radius: var(--bs-dropdown-item-border-radius,0);
+     
+
+  }
+ 
+  /* Hidden menu */
+  .ioutil-treedown-hidemenu > *:not(:first-child) {
+    display: none;
+  }
+
+/* locate caret to the right */
+  .ioutil-treedown .dropdown-toggle::after{
+    /* color:red; */
+    /* @todo add align-caret-right feature */
+  }
+ 
+
+
+ 
+  /* Drawer Root Node */ 
+  .ioutil-treedown-drawer > *  >.ioutil-treedown.ioutil-treedown-node {
+    background-color: red!important;
+    height: 0;
+    width: 0;
+  
+  
+
+}
+
+/* Drawer Root Node Button */ 
+.ioutil-treedown-drawer > *  >.ioutil-treedown.ioutil-treedown-node >button{
+  
+  max-width: 0!important;
+  max-height: 0!important;
+  padding: 0!important;
+  margin: 0!important;
+  border:0;
+  
+  }
+
+  
+  /* Drawer Sub Node  */
+  .ioutil-treedown-drawer  .ioutil-treedown-node:not(.ioutil-treedown) {
+  
+
+  }
+ /* Drawer Sub Node Button */
+ .ioutil-treedown-drawer  .ioutil-treedown-node:not(.ioutil-treedown)> button {
+   
+ 
+  }
+
+ /* Drawer First dropdown-menu */ 
+ .ioutil-treedown-drawer > *  >.ioutil-treedown.ioutil-treedown-node>.dropdown-menu {
+  margin-top: -18px;
+ 
+ 
+}
+  /* Drawer All dropdown-menu */ 
+  .ioutil-treedown-drawer    .ioutil-treedown-node>.dropdown-menu {
+    /* background-color: blue!important; */
+    width: 100%;
+    border-radius: 0px;
+    
+  }
+
+  /* offcanvas-body modifications */
+.ioutil-treedown-drawer >   .offcanvas-body{
+  padding: 0!important;
+}
+
+  /* offcanvas-header modifications */
+  .ioutil-treedown-drawer >   .offcanvas-header{
+    
+  }
