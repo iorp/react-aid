@@ -1,6 +1,6 @@
 {
   "name": "@iorp/react-aid",
-  "public": true,
+ 
   "version": "1.0.1",
   "description": "A react tool kit. ",
   "main": "lib/index.js",
@@ -12,6 +12,9 @@
     "build:rollup": "npx rollup -c  ",
     "build:css": "npx postcss src/**/*.css --base src --dir lib --config postcss.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [],
   "author": "",

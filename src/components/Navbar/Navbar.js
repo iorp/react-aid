@@ -9,7 +9,7 @@
  //import  useExpose  from '@ioutil/ react/lib/hooks/useExpose'; 
  import  useExpose  from '../../hooks/useExpose'; 
      
-  require('./style.css');
+  require('./style.css' );
   
  
  const Navbar = forwardRef((props,ref) => {
