@@ -19,6 +19,9 @@ import aset from '@iorp/node-aid/src/array/aset';
 import aget from '@iorp/node-aid/src/array/aget';
 
 
+
+require('./style.css');
+
 /**
  * TreeviewNode Component
  * Represents a node in the treeview hierarchy.
@@ -236,19 +239,23 @@ const Treeview = forwardRef((props, ref) => {
    * Expands or collapses all nodes in the data.
    *
    * @param {boolean|string} [value=true] - The value to set for the "open" property of all nodes or 'toggle' to toggle the current values.
+  //  * @param {function|null} [onChange=null] - The callback receives the status so it can manage icons when using toggle  
    */
-  const expandAll = (value = true) => {
+  const expandAll = (value = true) => { // ,onChange=null
     if (value == 'toggle') {
       var anyClosed = false;
       arec(data, (item, itemPath) => {
         if (!item._.open) anyClosed = true;
-      });
+      }); 
       value = anyClosed ? true : false;
+
     }
     const newData = arec(data, (item, itemPath) => {
       return { ...item, _: { ...item._, open: value } };
     });
     setData(deepClone(newData));
+
+ //   if( typeof onChange == 'function')  onChange(value);
   };
 
   // Exposing methods and state using useExpose
