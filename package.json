@@ -1,7 +1,6 @@
 {
   "name": "@iorp/react-aid",
- 
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A react tool kit. ",
   "main": "lib/index.js",
   "module": "lib/index.es.js",
@@ -24,7 +23,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@iorp/node-aid": "^0.0.1",
+    "@iorp/node-aid": "^0.0.3",
     "rollup-plugin-multi-entry": "^2.1.0"
   },
   "devDependencies": {

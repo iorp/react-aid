@@ -29,9 +29,11 @@ const useLocale= ()=>{
       
       //setLocale(p => {return {...p,locale:{...p.locale,strings:{...p.locale.strings,...strObj}}};  });  
     }
-    const getString = (key,nullValue="")=>{ 
-   
-      return (locale && locale.strings && locale.strings[locale.current] && locale.strings[locale.current][key])||nullValue;
+    const getString = (key,defaultValue=null)=>{ 
+      let res =   (locale && locale.strings && locale.strings[locale.current] && locale.strings[locale.current][key])||defaultValue;
+      if(!res) res = `${locale.current}.${key}`;
+      return res;
+    
     }
 
     return {
