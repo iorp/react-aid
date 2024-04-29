@@ -1,6 +1,6 @@
 {
   "name": "@iorp/react-aid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react tool kit. ",
   "main": "lib/index.js",
   "module": "lib/index.es.js",

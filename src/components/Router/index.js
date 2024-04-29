@@ -2,17 +2,21 @@
 import React, { useState, useEffect } from 'react';
  
 const Router = ({basename,routes}) => {
- const NotFound = () => (
+
+  const [currentPath, setCurrentPath] = useState(getCurrentPath());
+
+
+ const NotFound = (props) => (
      <div>
        <h1>404 - Not Found</h1>
+       <p>path: {props.currentPath}</p>
+       <p>base: {props.basename}</p>
        <p>Sorry, the page you are looking for does not exist.</p>
      </div>
    ); 
 
 
     
- const [currentPath, setCurrentPath] = useState(getCurrentPath());
-
  
 
 
@@ -45,7 +49,7 @@ if(currentPath.length>1 && currentPath.endsWith('/')) setCurrentPath(currentPath
 
  return (
    <div>
-     <ElementToRender />
+     <ElementToRender basename={basename}  currentPath={currentPath}   />
    </div>
  );
 };

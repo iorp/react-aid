@@ -1,8 +1,9 @@
 import React, {  useState,useContext, useEffect } from 'react';
 import  useScreen from '../../hooks/useScreen'  
 import LocaleContext from './contexts/LocaleContext';
-// import {deepMerge} from '@ioutil/ node/lib/common/objects'; 
-import deepMerge from '@iorp/node-aid/src/object/deepMerge';
+ import deepMerge from '@iorp/node-aid/src/object/deepMerge';
+ import readLocalStorageObject from "./../../plugins/localstorage/readLocalStorageObject";
+ import writeLocalStorageObject from "./../../plugins/localstorage/writeLocalStorageObject";
 // todo move to ioutil/src/components and document 
 
 
@@ -19,20 +20,29 @@ export const Locale = (props) => {
     }
      
   }; 
-   const [options, setOptions] = useState(() => deepMerge( defaultOptions,props.options || {}));
+   const [options, setOptions] = useState(() => deepMerge( defaultOptions,props.options || {
+    available:typeof defaultOptions.available =='function' ? defaultOptions.available():  [defaultOptions.default], 
+    default:'en'
+   }));
 
+   
+   const localeLocalStorage = readLocalStorageObject(process.env.REACT_APP_BASENAME+'locale');
   const [locale, setLocale] = useState({
-    current:typeof options.current =='function' ? options.current(locale.current):options.current,
-    available:typeof options.current =='function' ? options.available(locale.available):  [...new Set(options.available)], 
+    current:localeLocalStorage.current||options.default,
+    available:options.available,
     strings:{},
     rules:options.rules
   });
   
  
+  useEffect(() => {
  
+     writeLocalStorageObject(process.env.REACT_APP_BASENAME+'locale',{...localeLocalStorage,current:locale.current});
+ 
+  }, [locale]);
    
   return (
-    <LocaleContext.Provider value={{ locale,setLocale }}>
+    <LocaleContext.Provider value={{ locale,setLocale,options,setOptions }}>
       {children}
     </LocaleContext.Provider>
   );

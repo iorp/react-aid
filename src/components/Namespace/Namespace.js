@@ -12,7 +12,7 @@ import deepMerge from '@iorp/node-aid/src/object/deepMerge';
 export const Namespace = (props) => {
  const { children } =props;
  const defaultOptions={ 
- 
+  location:"", // the 'root folder' of the namespace, useful if it is not the host root 
  }  
 
 
