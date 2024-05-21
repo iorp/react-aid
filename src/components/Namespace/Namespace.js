@@ -1,6 +1,6 @@
 import React, {  useState,useContext, useEffect } from 'react';
   
-import NamespaceContext from './contexts/NamespaceContext';
+import NamespaceContext from '../../contexts/NamespaceContext';
 // import {deepMerge} from '@ioutil/ node/lib/common/objects';
 import deepMerge from '@iorp/node-aid/src/object/deepMerge';
 
@@ -25,18 +25,19 @@ export const Namespace = (props) => {
   
    // built in layout state, used by useNamespace functions 
   const [layout, setLayout] = useState({refs:null});
-    useEffect(() => {
-    // options
-    }, [options]);
-  const NamespaceContextValue = { 
+  
+  const namespaceContextValue = { 
     data,  setData,
     layout,setLayout,
     options,setOptions, 
      
 };
+useEffect(() => {
+  // options
 
+  }, [ ]);
   return (
-   options && <NamespaceContext.Provider value={NamespaceContextValue}>
+   options && <NamespaceContext.Provider value={namespaceContextValue}>
     {children}
     </NamespaceContext.Provider>
   );

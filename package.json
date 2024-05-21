@@ -23,7 +23,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@iorp/node-aid": "^0.0.3",
+    "@iorp/node-aid": "^0.0.4",
     "rollup-plugin-multi-entry": "^2.1.0"
   },
   "devDependencies": {

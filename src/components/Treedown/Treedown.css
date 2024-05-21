@@ -1,27 +1,27 @@
   /* General style  */
-.ioutil-treedown { 
+.aid-treedown { 
 
 }
 /* All Nodes  */
-.ioutil-treedown-node {
+.aid-treedown-node {
  
 
 } 
 /* Root Node */ 
-.ioutil-treedown.ioutil-treedown-node {
+.aid-treedown.aid-treedown-node {
     
   }
 /* Root  Node Button */ 
-.ioutil-treedown.ioutil-treedown-node >button{
+.aid-treedown.aid-treedown-node >button{
  
   }
   /* Sub Node  */
- .ioutil-treedown-node:not(.ioutil-treedown) {
+ .aid-treedown-node:not(.aid-treedown) {
   
 
   }
  /* Sub Node Button */
- .ioutil-treedown-node:not(.ioutil-treedown)> button {
+ .aid-treedown-node:not(.aid-treedown)> button {
    
 
     /* same as .dropdown-item   */
@@ -42,12 +42,12 @@
   }
  
   /* Hidden menu */
-  .ioutil-treedown-hidemenu > *:not(:first-child) {
+  .aid-treedown-hidemenu > *:not(:first-child) {
     display: none;
   }
 
 /* locate caret to the right */
-  .ioutil-treedown .dropdown-toggle::after{
+  .aid-treedown .dropdown-toggle::after{
     /* color:red; */
     /* @todo add align-caret-right feature */
   }
@@ -56,7 +56,7 @@
 
  
   /* Drawer Root Node */ 
-  .ioutil-treedown-drawer > *  >.ioutil-treedown.ioutil-treedown-node {
+  .aid-treedown-drawer > *  >.aid-treedown.aid-treedown-node {
     background-color: red!important;
     height: 0;
     width: 0;
@@ -66,7 +66,7 @@
 }
 
 /* Drawer Root Node Button */ 
-.ioutil-treedown-drawer > *  >.ioutil-treedown.ioutil-treedown-node >button{
+.aid-treedown-drawer > *  >.aid-treedown.aid-treedown-node >button{
   
   max-width: 0!important;
   max-height: 0!important;
@@ -78,24 +78,24 @@
 
   
   /* Drawer Sub Node  */
-  .ioutil-treedown-drawer  .ioutil-treedown-node:not(.ioutil-treedown) {
+  .aid-treedown-drawer  .aid-treedown-node:not(.aid-treedown) {
   
 
   }
  /* Drawer Sub Node Button */
- .ioutil-treedown-drawer  .ioutil-treedown-node:not(.ioutil-treedown)> button {
+ .aid-treedown-drawer  .aid-treedown-node:not(.aid-treedown)> button {
    
  
   }
 
  /* Drawer First dropdown-menu */ 
- .ioutil-treedown-drawer > *  >.ioutil-treedown.ioutil-treedown-node>.dropdown-menu {
+ .aid-treedown-drawer > *  >.aid-treedown.aid-treedown-node>.dropdown-menu {
   margin-top: -18px;
  
  
 }
   /* Drawer All dropdown-menu */ 
-  .ioutil-treedown-drawer    .ioutil-treedown-node>.dropdown-menu {
+  .aid-treedown-drawer    .aid-treedown-node>.dropdown-menu {
     /* background-color: blue!important; */
     width: 100%;
     border-radius: 0px;
@@ -103,11 +103,11 @@
   }
 
   /* offcanvas-body modifications */
-.ioutil-treedown-drawer >   .offcanvas-body{
+.aid-treedown-drawer >   .offcanvas-body{
   padding: 0!important;
 }
 
   /* offcanvas-header modifications */
-  .ioutil-treedown-drawer >   .offcanvas-header{
+  .aid-treedown-drawer >   .offcanvas-header{
     
   }

@@ -1,15 +1,14 @@
 
 # @iorp/react-aid
 ## Todo 
+- Un nest all hooks from components (Namespace ... ), and put them in hooks directly 
 - Unify every module exports, make indexes to all folders ( automate using turbodev??) 
-- useNamespace->setParams (of url), pair of getParams.
-  
  
+  
+# Note
+AFTER EDITS do  npm run build
 
-
-`@iorp/react-aid` is a utility library for React developers, providing handy tools and components to streamline development and improve productivity.
-
-## Features
+# Features
 
 - **Utility Hooks**: Includes various custom React hooks for common tasks like state management, side effects, and more.
 - **Reusable Components**: Offers a collection of reusable React components to speed up UI development.
@@ -43,7 +42,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Feel free to adjust the content as needed based on the specific features and documentation of `@iorp/react-aid`.
 
 
-# React-aid components
+   
+ 
+
+   
+# Components
+
+
 
 ## Namespace
 Provides a built in context to all the elements within
@@ -51,9 +56,47 @@ Provides a built in context to all the elements within
  - layout
  - options
  - data
- ```js
+
+ The hook useNamespace is available 
+ useNamespace
+ 
+
+## Locale
+Locale provides a dedicated context for strings and localization management
+
+## HotImporter 
+Hot importer allows the developer to include script directly to dom, this is very useful when working with for example bootstrap templates, allows the developer to use resources out of the sight of react so enhances hybridization
+
+# Hooks
+ 
+
+## useLocale
+```js
+const {
+      locale,
+      setLocale,
+      setLanguage,
+      setStrings,
+      getString,
+      L : getString,
+    } useLocale();
+```
+
+## useNamespace
+
+```js
+const {
+  layout,
+  setLayout,
+  data,
+  setData,
+  options,
+  setOptions
+  }= useNamespace();
+```
+```js
 //...
-import useNamespace from '@iorp/react-aid/lib/components/Namespace/hooks/useNamespace';
+import useNamespace from '@iorp/react-aid/lib/hooks/useNamespace';
  
 const Component = forwardRef((props, ref) => {
 
@@ -70,4 +113,21 @@ const Component = forwardRef((props, ref) => {
 }); 
 
 ```
+
+## useExpose
+```js
+ const [style,setStyle]= useState({});
+  useExpose(ref,{
+    // tho this for the const hooks , the name 'self' is conventional
+    self:{
+      style,
+      setStyle,
+      mySafeExposedStuff:123 // here is safe, any key name is valid
+    },
+    myBareExposedStuff:456  // WARNING:Dont overwrite component default attributes
+  })
+```
+
+
+`@iorp/react-aid` is a utility library for React developers, providing handy tools and components to streamline development and improve productivity.
 

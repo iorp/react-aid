@@ -50,7 +50,7 @@ const DrawerWrapper = forwardRef(({ title, children }, ref) => {
       onHide={collapseDrawer}
       ref={ref}
       {...props}
-      className={`ioutil-treedown-drawer ${props.className || ""}`}
+      className={`aid-treedown-drawer ${props.className || ""}`}
     >
       {/* Render the Drawer content using options.model.Drawer */}
       {options.model.Drawer(
@@ -59,7 +59,7 @@ const DrawerWrapper = forwardRef(({ title, children }, ref) => {
         <TreedownButton
           show={true}
           title="hidden"
-          className={`ioutil-treedown ${props.className || ""}`}
+          className={`aid-treedown ${props.className || ""}`}
         >
           {children}
         </TreedownButton>
@@ -232,7 +232,7 @@ export const Treedown = forwardRef((props, ref) => {
             ref={ref}
           {...props}
           title={options.title}
-          className={`ioutil-treedown ${props.className || ""}`}
+          className={`aid-treedown ${props.className || ""}`}
         >
           {children}
         </TreedownButton>
@@ -246,7 +246,7 @@ export const Treedown = forwardRef((props, ref) => {
           ref={ref}
           {...props}
           title={options.title}
-          className={`ioutil-treedown ioutil-treedown-hidemenu ${
+          className={`aid-treedown aid-treedown-hidemenu ${
             props.className || ""
           }`}
         />

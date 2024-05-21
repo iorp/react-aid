@@ -1,0 +1,158 @@
+
+<EdgeBars style={{top:4,left:4}}>
+
+ 
+<EdgeBars.Item k={{x:0,y:0,d:'e'}} >
+<button className="btn btn-dark"> <FontAwesomeIcon icon={faXmark} />  </button>
+ </EdgeBars.Item>
+<EdgeBars.Item k={{x:1,y:0,d:'e'}} >
+  
+<OverlayTrigger  placement={'right'}  overlay={
+        <Tooltip id={`tooltip-${'right'}`} style={{zIndex:999999}}>
+          Tooltip on <strong>{'right'}</strong>.
+        </Tooltip>
+      }
+    >
+    <button className="btn btn-light ms-1"> <FontAwesomeIcon icon={faXmark} />  </button>
+</OverlayTrigger>
+
+<button className="btn btn-primary ms-1"> <FontAwesomeIcon icon={faXmark} />  </button>
+<button className="btn btn-primary ms-1"> <FontAwesomeIcon icon={faXmark} />  </button>
+</EdgeBars.Item>
+
+<EdgeBars.Item k={{x:0,y:-1,d:'b'}} >
+<button className="btn btn-secondary mt-1"> <FontAwesomeIcon icon={faXmark} />  </button>
+<button className="btn btn-secondary mt-1"> <FontAwesomeIcon icon={faXmark} />  </button>
+</EdgeBars.Item>
+ 
+
+
+
+
+
+</EdgeBars>
+
+
+{/* No menus */}
+<EdgeBars style={{top:300,left:200}}>
+
+  {/* <EdgeBars.Main>
+    <button className="btn btn-success">  <FontAwesomeIcon icon={faXmark} />   </button>
+  </EdgeBars.Main> */}
+  <EdgeBars.Item k={{x:0,y:0,d:'e'}} >
+  <button className="btn btn-dark"> <FontAwesomeIcon icon={faXmark} />  </button>
+   </EdgeBars.Item>
+  <EdgeBars.Item k={{x:1,y:0,d:'e'}} >
+  <button className="btn btn-primary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-primary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  </EdgeBars.Item>
+
+  <EdgeBars.Item k={{x:0,y:-1,d:'b'}} >
+  <button className="btn btn-secondary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-secondary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  </EdgeBars.Item>
+  <EdgeBars.Item k={{x:0,y:1,d:'t'}} >
+  <button className="btn btn-warning"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-warning"> <FontAwesomeIcon icon={faXmark} />  </button>
+  </EdgeBars.Item>
+    
+  <EdgeBars.Item k={{x:-1,y:0,d:'s'}} >
+  <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+  
+  </EdgeBars.Item>
+
+
+ 
+
+
+</EdgeBars>
+
+{/* Simple nest */}
+<EdgeBars style={{top:300,left:400}}>
+
+
+  <EdgeBars.Item k={{x:0,y:0,d:'e'}} >
+  <button className="btn btn-dark"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <EdgeBars.Menu>
+  <EdgeBars.Item k={{x:-1,y:0,d:'s'}} >
+  <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+  
+  </EdgeBars.Item>
+
+  <EdgeBars.Item k={{x:1,y:0,d:'e'}} >
+  <button className="btn btn-primary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-primary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  </EdgeBars.Item>
+
+  <EdgeBars.Item k={{x:0,y:1,d:'t'}} >
+  <button className="btn btn-warning"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-warning"> <FontAwesomeIcon icon={faXmark} />  </button>
+  </EdgeBars.Item>
+ 
+  <EdgeBars.Item k={{x:0,y:-1,d:'b'}} >
+  <button className="btn btn-secondary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  <button className="btn btn-secondary"> <FontAwesomeIcon icon={faXmark} />  </button>
+  </EdgeBars.Item>
+</EdgeBars.Menu>
+   </EdgeBars.Item>
+ 
+
+
+</EdgeBars>
+ {/* Full capacity */}
+<EdgeBars style={{top:300,left:600}}>
+
+ 
+  <EdgeBars.Item k={{x:0,y:0,d:'e'}} >
+  <button className="btn btn-dark"> <FontAwesomeIcon icon={faXmark} />  </button>
+  
+    <EdgeBars.Menu className="show">
+    <EdgeBars.Item k={{x:-1,y:0,d:'s'}} >
+    <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+    <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+    
+    </EdgeBars.Item>
+
+    <EdgeBars.Item k={{x:1,y:0,d:'e'}} >
+    <button className="btn btn-primary"> <FontAwesomeIcon icon={faXmark} />  </button>
+    <button className="btn btn-primary"> <FontAwesomeIcon icon={faXmark} />  </button>
+    
+    </EdgeBars.Item>
+
+    <EdgeBars.Item k={{x:0,y:1,d:'t'}} >
+    <button className="btn btn-warning"> <FontAwesomeIcon icon={faXmark} />  </button>
+    <button className="btn btn-warning"> <FontAwesomeIcon icon={faXmark} />  </button>
+      <EdgeBars.Menu className="show">
+      <EdgeBars.Item k={{x:1,y:0,d:'e'}} >
+      <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+      <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+      <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button> 
+        <EdgeBars.Menu className="show">
+        <EdgeBars.Item k={{x:2,y:1,d:'t'}} >
+        <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+        <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button>
+        <button className="btn btn-danger"> <FontAwesomeIcon icon={faXmark} />  </button> 
+        </EdgeBars.Item>
+
+    
+      </EdgeBars.Menu>
+      
+      </EdgeBars.Item>
+
+  
+    </EdgeBars.Menu>
+    
+    </EdgeBars.Item>
+  
+    <EdgeBars.Item k={{x:0,y:-1,d:'b'}} >
+    <button className="btn btn-secondary"> <FontAwesomeIcon icon={faXmark} />  </button>
+    <button className="btn btn-secondary"> <FontAwesomeIcon icon={faXmark} />  </button>
+    </EdgeBars.Item>
+  </EdgeBars.Menu>
+   </EdgeBars.Item>
+ 
+
+
+</EdgeBars>

@@ -37,14 +37,17 @@ const Router = ({basename,routes}) => {
  function getCurrentPath() {
    const pathname = window.location.pathname;
    // const basename = '/TrueGrains/template-super-router-react/build'; // Replace with your basename
-   const trimmedPath = pathname.startsWith(basename) ? pathname.slice(basename.length) : pathname;
+   let trimmedPath = pathname.startsWith(basename) ? pathname.slice(basename.length) : pathname;
 
-   return trimmedPath || '/';
+    trimmedPath = ( trimmedPath )|| '/';
+   trimmedPath =trimmedPath.startsWith('/')? trimmedPath :'/'+trimmedPath;
+  return trimmedPath
  } 
  // automatically remove last / if it endswith  @todo review this and take ? possible parameteris in count
 if(currentPath.length>1 && currentPath.endsWith('/')) setCurrentPath(currentPath.substring(0,currentPath.length-1));
  
  const currentRoute = routes.find(route => route.path === currentPath);
+
  const ElementToRender = currentRoute ? currentRoute.element : NotFound;
 
  return (

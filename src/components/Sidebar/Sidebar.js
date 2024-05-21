@@ -115,11 +115,11 @@ useExpose(ref,{
 
  return (
    
-   <aside ref={ref} {...Object.fromEntries(Object.entries(props).filter(([key]) => key === key.toLowerCase()))} className={`ioutil-sidebar ${props.className||""}`}   style={style}>  
-   <div className='ioutil-sidebar-bar'>
+   <aside ref={ref} {...Object.fromEntries(Object.entries(props).filter(([key]) => key === key.toLowerCase()))} className={`aid-sidebar ${props.className||""}`}   style={style}>  
+   <div className='aid-sidebar-bar'>
    {children} 
    </div>
-   <Offcanvas show={drawerExpanded} onHide={collapseDrawer}  className={`ioutil-sidebar-drawer ${props.className||""}`}  style={{top:0,bottom:0}}>
+   <Offcanvas show={drawerExpanded} onHide={collapseDrawer}  className={`aid-sidebar-drawer ${props.className||""}`}  style={{top:0,bottom:0}}>
         {/* <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header> */}

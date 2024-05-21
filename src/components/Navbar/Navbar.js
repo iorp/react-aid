@@ -37,14 +37,14 @@
    return <>  
     <BootstrapNavbar ref={ref}  
     {...Object.fromEntries(Object.entries(props).filter(([key]) => key === key.toLowerCase()))}
-     className={`ioutil-navbar ${props.className||""}`} >
+     className={`aid-navbar ${props.className||""}`} >
              
-    <div className='ioutil-navbar-bar'>  
+    <div className='aid-navbar-bar'>  
          {children}
     </div>
          <Offcanvas placement={drawerPlacement} show={drawerExpanded} onHide={collapseDrawer}   
           style={{top:0,bottom:0}}> 
-         <Offcanvas.Body   className='ioutil-navbar-drawer' >  
+         <Offcanvas.Body   className='aid-navbar-drawer' >  
           {children}
          </Offcanvas.Body>
        </Offcanvas>  

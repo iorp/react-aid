@@ -2,32 +2,10 @@
  // Import necessary dependencies from the React library
  import React, { createRef, useEffect, forwardRef, useState, useImperativeHandle, useContext } from 'react';
 //  import Locale from '@iorp/react-aid/lib/components/Locale';
- import useLocale from '@iorp/react-aid/lib/components/Locale/hooks/useLocale';  
+ import useLocale from '@iorp/react-aid/lib/hooks/useLocale';  
  // Import Bootstrap styling
  import 'bootstrap/dist/css/bootstrap.min.css';
-//  import {Button,Container,Form,Nav,NavDropdown,Offcanvas} from 'react-bootstrap';  
-//  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//  import { faSearch,faXmark,faBars, faChevronDown,faChevronRight,faChevronUp } from '@fortawesome/free-solid-svg-icons'; 
  
-//  import {brand,title,localeOptions} from './config'
- 
- 
- 
-//  import Navbar from '@iorp/react-aid/lib/components/Navbar'; 
-  
- 
-  
-//   import Sidebar from '@iorp/react-aid/lib/components/Sidebar';
-//   import useExopse from '@iorp/react-aid/lib/hooks/useExpose'; 
-//   import useScreen, {R} from '@iorp/react-aid/lib/hooks/useScreen';
-//   import useExpose from '@iorp/react-aid/lib/hooks/useExpose';
- 
-//   import Treeview from '@iorp/react-aid/lib/components/Treeview'
-  
-     
-//    import useNamespace from '@iorp/react-aid/lib/components/Namespace/hooks/useNamespace';
-//  import { deepMerge } from '@iorp/react-aid/lib/deepMerge-c3f17a9c';
-    
  
   
  import Dropdown from 'react-bootstrap/Dropdown';

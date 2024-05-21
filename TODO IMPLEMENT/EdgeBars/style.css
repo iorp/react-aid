@@ -1,0 +1,35 @@
+.aid-edgebars{
+    /* display: flex; 
+    flex-wrap: wrap;
+    justify-content: left;
+    flex-flow: row; */
+    position:fixed;
+    z-index:999999;
+
+}
+ 
+.aid-edgebars-menu{
+    position:absolute;
+ 
+    display:none;
+   
+}
+
+.aid-edgebars-menu.show{ 
+    display:block;
+ 
+}
+
+.aid-edgebars-item{
+    position:absolute;
+      display: flex;
+        
+}
+
+.aid-edgebars-menu >.aid-edgebars-item {
+ 
+ 
+      }
+.aid-edgebars-menu.show >.aid-edgebars-item {
+ 
+  }
