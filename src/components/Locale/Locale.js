@@ -24,7 +24,7 @@ export const Locale = ({...props}) => {
    let browserLanguage = navigator.language || navigator.userLanguage; 
    if(typeof browserLanguage==='string') browserLanguage =browserLanguage.substring(0,2); 
    if(!options.available.includes(browserLanguage)) browserLanguage = null;
-   console.log(333,browserLanguage)
+  
    const localeLocalStorage = getLocalStorage(process.env.REACT_APP_BASENAME+'locale');
 
 

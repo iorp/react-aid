@@ -120,7 +120,7 @@ EdgeBars.Item=forwardRef((props, ref) => {
       const menuToggle=(event)=>{
         // lookup for the itemp
         const item = event.target.closest('.aid-edgebars-link');
-        console.log(item)
+       // console.log(item)
         if(item){
           const menu = item.nextElementSibling;
           if(menu){
