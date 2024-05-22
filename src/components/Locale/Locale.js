@@ -7,30 +7,29 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 
 
  
-export const Locale = (props) => {
+export const Locale = ({...props}) => {
   const { children } =props;
   const defaultOptions={
     current:null,
     available:[],
-    rules:{
-      
-    whenStringMissingTryDefaultLanguage:true,
-    whenStringMissingWarnInPlace:true,
-    }
+     
      
   }; 
-  const {setLocalStorage,getLocalStorage}= useLocalStorage({encoded:true})
-   const [options, setOptions] = useState(() => deepMerge( defaultOptions,props.options || {
-    available:typeof defaultOptions.available =='function' ? defaultOptions.available():  [defaultOptions.default], 
+  const {setLocalStorage,getLocalStorage}= useLocalStorage({encoded:false})
+   const [options, setOptions] = useState(() => deepMerge(  {
+    available: ['en'],
     default:'en'
-   }));
+   },props.options ||{},{mergeArrays:false}));
 
-   
+   let browserLanguage = navigator.language || navigator.userLanguage; 
+   if(typeof browserLanguage==='string') browserLanguage =browserLanguage.substring(0,2); 
+   if(!options.available.includes(browserLanguage)) browserLanguage = null;
+   console.log(333,browserLanguage)
    const localeLocalStorage = getLocalStorage(process.env.REACT_APP_BASENAME+'locale');
 
 
   const [locale, setLocale] = useState({
-    current: localeLocalStorage ?  (localeLocalStorage.current||options.default): options.default,
+    current:  ((localeLocalStorage && localeLocalStorage.current)||browserLanguage ||options.default),
     available:options.available,
     strings:{},
     rules:options.rules

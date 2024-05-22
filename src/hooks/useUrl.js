@@ -4,13 +4,18 @@
    
      import FSON from '@iorp/node-aid/src/plugin/fson'; 
      import deepMerge from '@iorp/node-aid/lib/object/deepMerge'; 
-   
+   import useBase64 from './useBase64';
    
 const useUrl = (options) => {
     options=deepMerge({ 
        encoded:false,
        allowAll:false
     },options);
+
+    const {encode,decode} = useBase64();
+ 
+
+
      const getUrlArgs=(key=null)=>{ 
         
           const {encoded,allowAll} = options;
@@ -20,7 +25,7 @@ const useUrl = (options) => {
    
           if(encoded) {
           try{
-          argsStr = atob(argsStr)
+          argsStr = decode(argsStr)
          }catch(err){
            if(!allowAll) {
              // return no args 
@@ -49,7 +54,7 @@ const useUrl = (options) => {
          if(typeof obj!="object" || Array.isArray(obj)) obj={};  
          let argsStr=FSON.stringify(obj).slice(1, -1).trim();
       
-         if(encoded)  argsStr = btoa(argsStr) 
+         if(encoded)  argsStr = encode(argsStr) 
       
       
          let urlStr = base +((argsStr.length>0)?'?'+argsStr:"") +((fragment!=null)?'#'+fragment:"");

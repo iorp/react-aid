@@ -300,12 +300,13 @@
 .fi-cm.fi-squared {
   background-image: url(../flags/1x1/cm.svg);
 }
-.fi-cn {
+.fi-cn,.fi-zh {
   background-image: url(../flags/4x3/cn.svg);
 }
-.fi-cn.fi-squared {
+.fi-cn.fi-squared,.fi-zh.fi-squared {
   background-image: url(../flags/1x1/cn.svg);
 }
+ 
 .fi-co {
   background-image: url(../flags/4x3/co.svg);
 }
