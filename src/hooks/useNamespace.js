@@ -4,7 +4,7 @@ import NamespaceContext from '../contexts/NamespaceContext'
  
 
 const useNamespace= ()=>{    
-    const {layout,setLayout,data,setData,options,setOptions}= useContext(NamespaceContext); 
+    const {layout,setLayout,data,setData,options,setOptions,args}= useContext(NamespaceContext); 
     const setRefs =(refs,merge=false)=>{
       let resultRefs={};
       
@@ -33,7 +33,8 @@ const useNamespace= ()=>{
       data,
       setData,
       options,
-      setOptions
+      setOptions,
+      args
     };
   }
 

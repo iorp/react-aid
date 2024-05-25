@@ -4,6 +4,7 @@ import NamespaceContext from '../../contexts/NamespaceContext';
 // import {deepMerge} from '@ioutil/ node/lib/common/objects';
 import deepMerge from '@iorp/node-aid/src/object/deepMerge';
 
+import useUrl from '../../hooks/useUrl';
 
 //todo bring to node .comon.objectsd
 
@@ -21,8 +22,10 @@ export const Namespace = (props) => {
  // built in data state generally for any kind of data 
   const [data, setData] = useState({});
 
+  const {getUrlArgs} = useUrl({encoded:true,allowAll:true}); // todo pass in options
  
-  
+  const args = getUrlArgs();
+ 
    // built in layout state, used by useNamespace functions 
   const [layout, setLayout] = useState({refs:null});
   
@@ -30,7 +33,7 @@ export const Namespace = (props) => {
     data,  setData,
     layout,setLayout,
     options,setOptions, 
-     
+     args
 };
 useEffect(() => {
   // options

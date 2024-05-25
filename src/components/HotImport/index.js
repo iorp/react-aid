@@ -8,6 +8,9 @@ import React, { useState, useEffect } from 'react';
  * @param {*} props.children - The children components.
  * @returns {*} The rendered component.
  */
+
+ 
+
 function HotImport({ elements,onReady, children }) {
   const [scriptsReady, setScriptsReady] = useState(false);
  
@@ -73,22 +76,44 @@ function HotImport({ elements,onReady, children }) {
  
     loadHeadElements();
     loadBodyScripts();
- 
-    return () => {
+    const cleanup=()=>{
+        // Cleanup function
+        elements.head.forEach(element => {
+          const existingElement = document.querySelector(element.tag);
+          if (existingElement) {
+            existingElement.remove();
+          }
+        });
+        elements.body.forEach(element => {
+          const existingElement = document.querySelector(element.tag);
+          if (existingElement) {
+            existingElement.remove();
+          }
+        });
+    }
+
+   // window.addEventListener('popstate',cleanup);
+    //window.addEventListener('hashchange',cleanup);
       
-      // Cleanup function
-      // elements.head.forEach(element => {
-      //   const existingElement = document.querySelector(element.tag);
-      //   if (existingElement) {
-      //     existingElement.remove();
-      //   }
-      // });
-      // elements.body.forEach(element => {
-      //   const existingElement = document.querySelector(element.tag);
-      //   if (existingElement) {
-      //     existingElement.remove();
-      //   }
-      // });
+    
+        
+    return () => {
+// window.removeEventListener('popstate', cleanup);
+    //   window.removeEventListener('hashchange', cleanup); // Remove hash change listener
+    cleanup();
+    //  // Cleanup function
+    //   elements.head.forEach(element => {
+    //     const existingElement = document.querySelector(element.tag);
+    //     if (existingElement) {
+    //       existingElement.remove();
+    //     }
+    //   });
+    //   elements.body.forEach(element => {
+    //     const existingElement = document.querySelector(element.tag);
+    //     if (existingElement) {
+    //       existingElement.remove();
+    //     }
+    //   });
     };
   }, [elements]);
  

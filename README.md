@@ -1,8 +1,8 @@
 
 # @iorp/react-aid
 ## Todo 
-- Un nest all hooks from components (Namespace ... ), and put them in hooks directly 
-- Unify every module exports, make indexes to all folders ( automate using turbodev??) 
+- Locale getString /setString must also accept serialiczed component strings, in order to be able to use ScriptComponent from the server
+ - Unify every module exports, make indexes to all folders ( automate using turbodev??) 
  
   
 # Note

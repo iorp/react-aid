@@ -20,12 +20,22 @@ const useUrl = (options) => {
         
           const {encoded,allowAll} = options;
          let args = {}
-         if(window.location.search && window.location.search.startsWith('?') && window.location.search.length>1){
-          let argsStr = window.location.search.trim().substring(1).split('#')[0];
+         let argsStr;
+
+         const questionMarkIndex = window.location.href.indexOf('?');
+          if (questionMarkIndex !== -1) {
+            argsStr =  window.location.href.substring(questionMarkIndex + 1).split('#')[0];
+    
+               
+          } 
+           
+         if(argsStr){
+           
    
           if(encoded) {
           try{
           argsStr = decode(argsStr)
+     
          }catch(err){
            if(!allowAll) {
              // return no args 
